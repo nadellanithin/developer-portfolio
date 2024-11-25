@@ -1,0 +1,22 @@
+[
+    {
+        "Header" : "Profile",
+        "Info" : "Welcome to my corner of the digital galaxy, where code is the Force that binds all things! 🚀 I'm Nithin Nadella, a full-stack developer with a passion for building both mobile & web apps. My mastery of JavaScript, React, and a toolkit of other technologies helps me slice through bugs and bring ideas to life with precision. Whether it's solving complex problems or crafting sleek interfaces, I’m always up for the challenge. When I’m not coding, I’m probably leveling up or exploring new tech realms. Ready for a fun coding adventure? Let’s make things happen!",
+        "Badge" : "src/assets/ProfileCard.png"
+    },
+    {
+        "Header" : "Education",
+        "Info" : "<strong>Oklahoma State University</strong><br />Master's Degree, Computer and Information Sciences<br />Aug 2021 – May 2023<br /><br /><strong>BV Raju Institute of Technology (BVRIT)</strong><br />Bachelor of Technology (BTech), Computer Science<br />Aug 2015 – May 2019<br /><br /><strong>Certifications:</strong> Along the way, I’ve also collected a couple of online certifications to keep sharpening my skills. Because, hey, learning never stops!",
+        "Badge" : "src/assets/EduCard.png"
+    },
+    {
+        "Header" : "Hobbies",
+        "Info" : "When I'm not deep in code, you’ll probably find me binge-watching a wild mix of sci-fi, rom-coms, and superhero flicks - because, who doesn’t love a good plot twist and a flying cape? 🎬 Oh, and anime. Lots of anime. When I’m not on a movie marathon, I'm jamming out to some tunes 🎧 or doodling comic and cartoon characters like it’s still Saturday morning cartoons. Yeah, I’ve got the nostalgia bug, and I’m not afraid to admit it",
+        "Badge" : "src/assets/HobbiesCard.png"
+    },
+    {
+        "Header" : "Extracurricular",
+        "Info" : "Beyond the code, I’ve always had a passion for soccer, playing as a forward for my varsity team. We didn’t just play—we dominated, becoming one of the top teams and racking up tournament wins like high scores in a game. Fast feet, sharp passes, and a goal or two? That’s my kind of victory! Soccer is my ultimate passion, but I also dabble in cricket and badminton when I'm not scoring goals. Whether it’s on the pitch or with a racket, competition is always a thrill!",
+        "Badge" : "src/assets/ExtracurricularsCard.png"
+    }
+]

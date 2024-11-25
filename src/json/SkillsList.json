@@ -1,0 +1,138 @@
+{
+    "skillSet1" : [
+        {
+            "Name" : "HTML5",
+            "Logo" : "src/assets/skills/S1.png"
+        },
+        {
+            "Name" : "CSS3",
+            "Logo" : "src/assets/skills/S2.png"
+        },
+        {
+            "Name" : "JavaScript",
+            "Logo" : "src/assets/skills/S3.png"
+        },
+        {
+            "Name" : "React",
+            "Logo" : "src/assets/skills/S4.png"
+        },
+        {
+            "Name" : "React Native",
+            "Logo" : "src/assets/skills/S4.png"
+        },
+        {
+            "Name" : "Swift",
+            "Logo" : "src/assets/skills/S5.png"
+        },
+        {
+            "Name" : "Kotlin",
+            "Logo" : "src/assets/skills/S6.png"
+        },
+        {
+            "Name" : "Redux",
+            "Logo" : "src/assets/skills/S7.png"
+        },
+        {
+            "Name" : "ASP.NET",
+            "Logo" : "src/assets/skills/S8.png"
+        },
+        {
+            "Name" : "TypeScript",
+            "Logo" : "src/assets/skills/S9.png"
+        },
+        {
+            "Name" : "Bootstrap",
+            "Logo" : "src/assets/skills/S10.png"
+        }       
+    ],
+
+    "skillSet2" : [
+        {
+            "Name" : "Python",
+            "Logo" : "src/assets/skills/S11.png"
+        },
+        {
+            "Name" : "C#",
+            "Logo" : "src/assets/skills/S12.png"
+        },
+        {
+            "Name" : "Java",
+            "Logo" : "src/assets/skills/S13.png"
+        },
+        {
+            "Name" : "C++",
+            "Logo" : "src/assets/skills/S14.png"
+        },
+        {
+            "Name" : "MySQL",
+            "Logo" : "src/assets/skills/S15.png"
+        },
+        {
+            "Name" : "PHP",
+            "Logo" : "src/assets/skills/S16.png"
+        },
+        {
+            "Name" : "Visual Basic",
+            "Logo" : "src/assets/skills/S17.png"
+        },
+        {
+            "Name" : "Node.js",
+            "Logo" : "src/assets/skills/S18.png"
+        },
+        {
+            "Name" : "Core ML",
+            "Logo" : "src/assets/skills/S19.png"
+        },
+        {
+            "Name" : "PEGA",
+            "Logo" : "src/assets/skills/S20.png"
+        },
+        {
+            "Name" : "JQuery",
+            "Logo" : "src/assets/skills/S21.png"
+        }     
+    ],
+
+    "skillSet3" : [
+        {
+            "Name" : "Figma",
+            "Logo" : "src/assets/skills/S22.png"
+        },
+        {
+            "Name" : "Xcode",
+            "Logo" : "src/assets/skills/S23.png"
+        },
+        {
+            "Name" : "Android Studio",
+            "Logo" : "src/assets/skills/S24.png"
+        },
+        {
+            "Name" : "Git",
+            "Logo" : "src/assets/skills/S25.png"
+        },
+        {
+            "Name" : "BitBucket",
+            "Logo" : "src/assets/skills/S26.png"
+        },
+        {
+            "Name" : "Visual Studio Code",
+            "Logo" : "src/assets/skills/S27.png"
+        },
+        {
+            "Name" : "Visual Studio",
+            "Logo" : "src/assets/skills/S28.png"
+        },
+        {
+            "Name" : "BrowserStack",
+            "Logo" : "src/assets/skills/S29.png"
+        },
+        {
+            "Name" : "Postman",
+            "Logo" : "src/assets/skills/S30.png"
+        },
+        {
+            "Name" : "Jira",
+            "Logo" : "src/assets/skills/S31.png"
+        }   
+    ]
+}

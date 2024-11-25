@@ -1,0 +1,51 @@
+/* Light Mode */
+.light-mode {
+  --background-image: url("src/assets/B2.jpg");
+  --top-bar-bg: #00081590;
+  --nav-link-hover: linear-gradient(
+    180deg,
+    rgba(0, 60, 226, 0.8) 0%,
+    #0164ff4a 100%
+  );
+  --intro-bg: #00000050;
+  --intro-bxs: #000;
+  --icon-hover: #ffba08;
+  --icon-shadow: rgba(0, 0, 0, 0.5);
+  --gradient-background: linear-gradient(
+    270deg,
+    rgba(135, 206, 250, 0.5) 0%,
+    #006bff24 100%
+  );
+  --carousel-bg: #0024d498;
+  --nav-icon-color: #000;
+  --cBadge-bg: #0849d4;
+  --cBadge-img-shadow: #fff;
+  --exp-info-bg: #1f0099af;
+  --sC-bg: #000aff35;
+  --sContainer-border: #1700b6b2;
+  --footer-bg: #000815;
+}
+
+/* Dark Mode */
+.dark-mode {
+  --background-image: url("src/assets/B1.png");
+  --top-bar-bg: #0b081e90;
+  --nav-link-hover: linear-gradient(
+    180deg,
+    rgba(128, 0, 0, 0.8) 0%,
+    #8000004a 100%
+  );
+  --intro-bg: #00000050;
+  --intro-bxs: #000;
+  --icon-hover: #9d0610;
+  --icon-shadow: #ffffff20;
+  --gradient-background: linear-gradient(270deg, #5c000010 0%, #f7110014 100%);
+  --carousel-bg: #6f000098;
+  --nav-icon-color: #cb221f;
+  --cBadge-bg: #820306;
+  --cBadge-img-shadow: #000;
+  --exp-info-bg: #5c0000af;
+  --sC-bg: #fd000051;
+  --sContainer-border: #9d1916;
+  --footer-bg: #250902;
+}

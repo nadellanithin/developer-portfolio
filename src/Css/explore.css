@@ -1,0 +1,138 @@
+@import "../Theme.css";
+
+.Explore {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  height: 100%;
+  color: #fff;
+}
+
+.main-header {
+  margin: 50px 20px 20px;
+}
+
+.ContentTile {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 0px 50px #000000;
+  background: transparent;
+  height: auto;
+  margin: 0px 20px 50px;
+  padding: 0px 30px 30px;
+}
+
+.card-view-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.Card {
+  width: 300px;
+  height: 250px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.Card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: var(--carousel-bg);
+  border: 5px solid #fff;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  padding: 10px;
+  transform: rotateY(180deg);
+}
+
+.Card:hover .card-front,
+.card-back {
+  box-shadow: 0px 0px 15px #fffaf0;
+}
+
+.card-title {
+  background: #fff;
+  width: 150px;
+  height: 50px;
+  border-radius: 5px 0px 50px 0px;
+  color: #333;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: 0px 0px 2px #333;
+  backface-visibility: hidden;
+}
+
+.card-logo {
+  height: 200px;
+  width: 200px;
+  align-self: center;
+}
+
+.card-insights {
+  font-size: 1.1rem;
+}
+
+.modal-backdrop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(2px);
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: clamp(80%, max-content, 1200px);
+  position: relative;
+  margin-top: 40px;
+  max-height: 600px;
+  overflow: auto;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #000000;
+  text-shadow: 0px 0px 2px #000;
+  cursor: pointer;
+}
