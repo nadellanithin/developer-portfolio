@@ -8,28 +8,28 @@ function Footer() {
           target="_blank"
           style={{ display: "flex" }}
         >
-          <img src="src\assets\linkedin.png" className="social-icons" />
+          <img src="assets/linkedin.png" className="social-icons" />
         </a>
         <a
           href="https://github.com/nadellanithin"
           target="_blank"
           style={{ display: "flex" }}
         >
-          <img src="src\assets\github.png" className="social-icons" />
+          <img src="assets/github.png" className="social-icons" />
         </a>
         <a
           href="mailto:nithinsubhashnadella@gmail.com"
           target="_blank"
           style={{ display: "flex" }}
         >
-          <img src="src\assets\gmail.png" className="social-icons" />
+          <img src="assets/gmail.png" className="social-icons" />
         </a>
         <a
           href="https://x.com/home"
           target="_blank"
           style={{ display: "flex" }}
         >
-          <img src="src\assets\twitter.png" className="social-icons" />
+          <img src="assets/twitter.png" className="social-icons" />
         </a>
       </div>
     </div>

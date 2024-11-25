@@ -55,7 +55,7 @@ const ChatBot = () => {
     <div className="ChatBotContainer">
       {showMsg && msg && <em className="chatBot-dialog">{msg}</em>}
       <img
-        src="src\assets\Baby-yoda.png"
+        src="assets/Baby-yoda.png"
         className="chat-bot"
         style={{ opacity: showMsg && msg ? "1" : "0.3" }}
         onClick={handleClick}

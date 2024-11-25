@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import "../../Css/subComponents.css";
-import LIcon from "../../assets/LMIcon.png";
-import DIcon from "../../assets/DMIcon.png";
+import LIcon from "../../../public/assets/LMIcon.png";
+import DIcon from "../../../public/assets/DMIcon.png";
 import { ThemeContext } from "../ThemeContext";
 
 function Home() {
