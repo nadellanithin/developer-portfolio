@@ -1,6 +1,6 @@
 /* Light Mode */
 .light-mode {
-  --background-image: url("src/assets/B2.jpg");
+  --background-image: url("/assets/B2.jpg");
   --top-bar-bg: #00081590;
   --nav-link-hover: linear-gradient(
     180deg,
@@ -28,7 +28,7 @@
 
 /* Dark Mode */
 .dark-mode {
-  --background-image: url("src/assets/B1.png");
+  --background-image: url("/assets/B1.png");
   --top-bar-bg: #0b081e90;
   --nav-link-hover: linear-gradient(
     180deg,

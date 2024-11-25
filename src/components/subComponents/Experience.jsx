@@ -74,7 +74,7 @@ function Experience() {
             </div>
           </div>
         </div>
-        <img src="src/assets/Experience.png" height={450} width={500} />
+        <img src="/assets/Experience.png" height={450} width={500} />
       </div>
     </div>
   );
