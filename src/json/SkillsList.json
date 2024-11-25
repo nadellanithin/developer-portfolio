@@ -2,137 +2,137 @@
     "skillSet1" : [
         {
             "Name" : "HTML5",
-            "Logo" : "/assets/skills/S1.png"
+            "Logo" : "assets/skills/S1.png"
         },
         {
             "Name" : "CSS3",
-            "Logo" : "/assets/skills/S2.png"
+            "Logo" : "assets/skills/S2.png"
         },
         {
             "Name" : "JavaScript",
-            "Logo" : "/assets/skills/S3.png"
+            "Logo" : "assets/skills/S3.png"
         },
         {
             "Name" : "React",
-            "Logo" : "/assets/skills/S4.png"
+            "Logo" : "assets/skills/S4.png"
         },
         {
             "Name" : "React Native",
-            "Logo" : "/assets/skills/S4.png"
+            "Logo" : "assets/skills/S4.png"
         },
         {
             "Name" : "Swift",
-            "Logo" : "/assets/skills/S5.png"
+            "Logo" : "assets/skills/S5.png"
         },
         {
             "Name" : "Kotlin",
-            "Logo" : "/assets/skills/S6.png"
+            "Logo" : "assets/skills/S6.png"
         },
         {
             "Name" : "Redux",
-            "Logo" : "/assets/skills/S7.png"
+            "Logo" : "assets/skills/S7.png"
         },
         {
             "Name" : "ASP.NET",
-            "Logo" : "/assets/skills/S8.png"
+            "Logo" : "assets/skills/S8.png"
         },
         {
             "Name" : "TypeScript",
-            "Logo" : "/assets/skills/S9.png"
+            "Logo" : "assets/skills/S9.png"
         },
         {
             "Name" : "Bootstrap",
-            "Logo" : "/assets/skills/S10.png"
+            "Logo" : "assets/skills/S10.png"
         }       
     ],
 
     "skillSet2" : [
         {
             "Name" : "Python",
-            "Logo" : "/assets/skills/S11.png"
+            "Logo" : "assets/skills/S11.png"
         },
         {
             "Name" : "C#",
-            "Logo" : "/assets/skills/S12.png"
+            "Logo" : "assets/skills/S12.png"
         },
         {
             "Name" : "Java",
-            "Logo" : "/assets/skills/S13.png"
+            "Logo" : "assets/skills/S13.png"
         },
         {
             "Name" : "C++",
-            "Logo" : "/assets/skills/S14.png"
+            "Logo" : "assets/skills/S14.png"
         },
         {
             "Name" : "MySQL",
-            "Logo" : "/assets/skills/S15.png"
+            "Logo" : "assets/skills/S15.png"
         },
         {
             "Name" : "PHP",
-            "Logo" : "/assets/skills/S16.png"
+            "Logo" : "assets/skills/S16.png"
         },
         {
             "Name" : "Visual Basic",
-            "Logo" : "/assets/skills/S17.png"
+            "Logo" : "assets/skills/S17.png"
         },
         {
             "Name" : "Node.js",
-            "Logo" : "/assets/skills/S18.png"
+            "Logo" : "assets/skills/S18.png"
         },
         {
             "Name" : "Core ML",
-            "Logo" : "/assets/skills/S19.png"
+            "Logo" : "assets/skills/S19.png"
         },
         {
             "Name" : "PEGA",
-            "Logo" : "/assets/skills/S20.png"
+            "Logo" : "assets/skills/S20.png"
         },
         {
             "Name" : "JQuery",
-            "Logo" : "/assets/skills/S21.png"
+            "Logo" : "assets/skills/S21.png"
         }     
     ],
 
     "skillSet3" : [
         {
             "Name" : "Figma",
-            "Logo" : "/assets/skills/S22.png"
+            "Logo" : "assets/skills/S22.png"
         },
         {
             "Name" : "Xcode",
-            "Logo" : "/assets/skills/S23.png"
+            "Logo" : "assets/skills/S23.png"
         },
         {
             "Name" : "Android Studio",
-            "Logo" : "/assets/skills/S24.png"
+            "Logo" : "assets/skills/S24.png"
         },
         {
             "Name" : "Git",
-            "Logo" : "/assets/skills/S25.png"
+            "Logo" : "assets/skills/S25.png"
         },
         {
             "Name" : "BitBucket",
-            "Logo" : "/assets/skills/S26.png"
+            "Logo" : "assets/skills/S26.png"
         },
         {
             "Name" : "Visual Studio Code",
-            "Logo" : "/assets/skills/S27.png"
+            "Logo" : "assets/skills/S27.png"
         },
         {
             "Name" : "Visual Studio",
-            "Logo" : "/assets/skills/S28.png"
+            "Logo" : "assets/skills/S28.png"
         },
         {
             "Name" : "BrowserStack",
-            "Logo" : "/assets/skills/S29.png"
+            "Logo" : "assets/skills/S29.png"
         },
         {
             "Name" : "Postman",
-            "Logo" : "/assets/skills/S30.png"
+            "Logo" : "assets/skills/S30.png"
         },
         {
             "Name" : "Jira",
-            "Logo" : "/assets/skills/S31.png"
+            "Logo" : "assets/skills/S31.png"
         }   
     ]
 }

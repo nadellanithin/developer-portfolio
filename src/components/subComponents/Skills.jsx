@@ -11,15 +11,15 @@ function Skills() {
       <Marquee skills={SkillData.skillSet3} direction="left" />
       <div className="SContentAlt">
         <div className="S-container">
-          <img src="/assets/Mobile_Mockup.png" className="elevated-image" />
+          <img src="assets/Mobile_Mockup.png" className="elevated-image" />
           Mobile app Developement
         </div>
         <div className="S-container">
-          <img src="/assets/Web_Mockup.png" className="elevated-image" />
+          <img src="assets/Web_Mockup.png" className="elevated-image" />
           Web app Developement
         </div>
         <div className="S-container">
-          <img src="/assets/Ai.png" className="elevated-image" />
+          <img src="assets/Ai.png" className="elevated-image" />
           AI/ML
         </div>
       </div>

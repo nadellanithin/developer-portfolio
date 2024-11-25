@@ -67,7 +67,7 @@ const MovieList = () => {
                 src={
                   movie.Poster !== "N/A"
                     ? movie.Poster
-                    : "/assets/widgets/Placeholder.jpg"
+                    : "assets/widgets/Placeholder.jpg"
                 }
                 alt={movie.Title}
                 style={styles.moviePoster}

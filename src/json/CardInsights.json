@@ -2,25 +2,25 @@
   "widgets": [
     {
       "CardTitle": "Todo list",
-      "Url": "/assets/widgets/Todo.png",
+      "Url": "assets/widgets/Todo.png",
       "Desc": "Stay organized and productive! This to-do list allows you to add, check and delete tasks with ease. Keep track of what’s important and never miss a deadline again.",
       "Component": "TodoList"
     },
     {
       "CardTitle": "Calculator",
-      "Url": "/assets/widgets/Calculator.png",
+      "Url": "assets/widgets/Calculator.png",
       "Desc": "Solve all your math problems instantly! From basic arithmetic to more complex calculations, this easy-to-use calculator is perfect for quick computations.",
       "Component": "Calculator"
     },
     {
       "CardTitle": "Movie Titles",
-      "Url": "/assets/widgets/Movie.png",
+      "Url": "assets/widgets/Movie.png",
       "Desc": "Discover the world of cinema! This widget fetches trending movies from a free API, showcasing movie titles and posters to keep film enthusiasts updated with the latest hits.",
       "Component": "Movies"
     },
     {
       "CardTitle": "ASP/React",
-      "Url": "/assets/widgets/asp-react.png",
+      "Url": "assets/widgets/asp-react.png",
       "Desc": "Coming Soon!!!",
       "Component": "AspReact"
     }
@@ -28,25 +28,25 @@
   "games": [
     {
       "CardTitle": "Tic-Tac-To",
-      "Url": "/assets/games/tic-tac-to.png",
+      "Url": "assets/games/tic-tac-to.png",
       "Desc": "Put your strategy skills to the test! Play this classic two-player game against a friend or practice solo and become the ultimate Tic Tac Toe champion.",
       "Component": "TicTacToe"
     },
     {
       "CardTitle": "2048",
-      "Url": "/assets/games/2048.png",
+      "Url": "assets/games/2048.png",
       "Desc": "Slide tiles and combine numbers to reach the magical 2048! This highly addictive puzzle game challenges your logic and planning skills with every move.",
       "Component": "Game2048"
     },
     {
       "CardTitle": "Snake Game",
-      "Url": "/assets/games/snake-game.png",
+      "Url": "assets/games/snake-game.png",
       "Desc": "Take a nostalgic trip back to the arcade days! Guide the snake to collect food and grow longer while avoiding collisions in this retro classic.",
       "Component": "SnakeGame"
     },
     {
       "CardTitle": "Flappy Bird",
-      "Url": "/assets/games/Flappy.png",
+      "Url": "assets/games/Flappy.png",
       "Desc": "Test your reflexes in this fast-paced game! Help the bird navigate through obstacles without hitting them. How far can you go before it’s game over?",
       "Component": "FlappyBird"
     }

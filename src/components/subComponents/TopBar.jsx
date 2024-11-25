@@ -20,7 +20,7 @@ function TopBar() {
       <div style={{ display: "flex", gap: "10px" }}>
         <a className="Title" onClick={() => handleNavigateToSection("Home")}>
           <img
-            src="../../../public/favicon.ico"
+            src="favicon.ico"
             alt="Website logo"
             className="Logo"
           />
