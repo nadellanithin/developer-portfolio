@@ -114,6 +114,13 @@ const Game2048 = () => {
   const [board, setBoard] = useState(initializeBoard());
   const [gameOver, setGameOver] = useState(false);
   const [score, setScore] = useState(0);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 600);
+
+  useEffect(() => {
+    const handleResize = () => setIsSmallScreen(window.innerWidth < 600);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -150,6 +157,64 @@ const Game2048 = () => {
     setScore(0);
   };
 
+  const styles = {
+    container: {
+      textAlign: "center",
+      fontFamily: "Arial, sans-serif",
+    },
+    title: {
+      fontSize: "2rem",
+      marginBottom: "0px",
+      color: "#333",
+      textShadow: "0px 0px 2px #333",
+    },
+    score: {
+      fontSize: "1.5rem",
+      marginBottom: "10px",
+      color: "#333",
+    },
+    board: {
+      display: "grid",
+      gridTemplateRows: `repeat(${SIZE}, 1fr)`,
+      gap: "5px",
+      justifyContent: "center",
+      margin: "auto",
+      width: `${SIZE * (isSmallScreen ? 90 : 100)}px`,
+    },
+    row: {
+      display: "grid",
+      gridTemplateColumns: `repeat(${SIZE}, 1fr)`,
+      gap: "5px",
+    },
+    tile: {
+      width: "70px",
+      height: "70px",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      fontSize: "2rem",
+      fontWeight: "bold",
+      backgroundColor: "#cdc1b4",
+      borderRadius: "5px",
+    },
+    gameOver: {
+      fontSize: "1.5rem",
+      color: "red",
+      margin: "5px 0px 0px",
+    },
+    resetButton: {
+      marginTop: "20px",
+      padding: "10px 20px",
+      fontSize: "1rem",
+      backgroundColor: "#007bff",
+      color: "white",
+      border: "none",
+      borderRadius: "5px",
+      cursor: "pointer",
+      boxShadow: "2px 2px 3px #333",
+    },
+  };
+
   return (
     <div style={styles.container}>
       <h1 style={styles.title}>2048</h1>
@@ -178,64 +243,6 @@ const Game2048 = () => {
       </button>
     </div>
   );
-};
-
-const styles = {
-  container: {
-    textAlign: "center",
-    fontFamily: "Arial, sans-serif",
-  },
-  title: {
-    fontSize: "2rem",
-    marginBottom: "0px",
-    color: "#333",
-    textShadow: "0px 0px 2px #333",
-  },
-  score: {
-    fontSize: "1.5rem",
-    marginBottom: "10px",
-    color: "#333",
-  },
-  board: {
-    display: "grid",
-    gridTemplateRows: `repeat(${SIZE}, 1fr)`,
-    gap: "5px",
-    justifyContent: "center",
-    margin: "auto",
-    width: `${SIZE * 100}px`,
-  },
-  row: {
-    display: "grid",
-    gridTemplateColumns: `repeat(${SIZE}, 1fr)`,
-    gap: "5px",
-  },
-  tile: {
-    width: "70px",
-    height: "70px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    fontSize: "2rem",
-    fontWeight: "bold",
-    backgroundColor: "#cdc1b4",
-    borderRadius: "5px",
-  },
-  gameOver: {
-    fontSize: "1.5rem",
-    color: "red",
-    margin: "5px 0px 0px",
-  },
-  resetButton: {
-    marginTop: "20px",
-    padding: "10px 20px",
-    fontSize: "1rem",
-    backgroundColor: "#007bff",
-    color: "white",
-    border: "none",
-    borderRadius: "5px",
-    cursor: "pointer",
-    boxShadow: "2px 2px 3px #333",
-  },
 };
 
 export default Game2048;

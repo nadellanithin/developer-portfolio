@@ -17,6 +17,13 @@ const SnakeGame = () => {
   const [direction, setDirection] = useState(DIRECTIONS.ArrowRight);
   const [gameOver, setGameOver] = useState(false);
   const [score, setScore] = useState(0);
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 600);
+
+  useEffect(() => {
+    const handleResize = () => setIsSmallScreen(window.innerWidth < 600);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const getRandomFoodPosition = useCallback(() => {
     let newFood;
@@ -92,6 +99,60 @@ const SnakeGame = () => {
     setScore(0);
   };
 
+  const styles = {
+    container: {
+      textAlign: "center",
+      fontFamily: "Arial, sans-serif",
+      margin: "0px",
+    },
+    title: {
+      fontSize: "2rem",
+      marginBottom: "10px",
+      color: "#333",
+      textShadow: "0px 0px 2px #333",
+    },
+    board: {
+      display: "grid",
+      gridTemplateRows: `repeat(${BOARD_ROWS}, ${
+        isSmallScreen ? "15px" : "20px"
+      })`,
+      gap: "1px",
+      justifyContent: "center",
+      margin: "auto",
+      backgroundColor: "#555",
+      padding: "5px",
+      borderRadius: "10px",
+      boxShadow: "0px 0px 3px #555",
+    },
+    row: {
+      display: "grid",
+      gridTemplateColumns: `repeat(${BOARD_COLS}, ${
+        isSmallScreen ? "15px" : "20px"
+      })`,
+    },
+    cell: {
+      width: isSmallScreen ? "15px" : "20px",
+      height: isSmallScreen ? "15px" : "20px",
+      borderRadius: "4px",
+    },
+    gameOver: {
+      fontSize: "1.5rem",
+      color: "red",
+      margin: "5px 0px 0px",
+    },
+    resetButton: {
+      marginTop: "10px",
+      padding: "10px 20px",
+      fontSize: "1rem",
+      backgroundColor: "#007bff",
+      color: "white",
+      border: "none",
+      borderRadius: "5px",
+      cursor: "pointer",
+      boxShadow: "2px 2px 3px #333",
+    },
+  };
+
   return (
     <div style={styles.container}>
       <h1 style={styles.title}>Snake Game</h1>
@@ -126,56 +187,6 @@ const SnakeGame = () => {
       </button>
     </div>
   );
-};
-
-const styles = {
-  container: {
-    textAlign: "center",
-    fontFamily: "Arial, sans-serif",
-    margin: "20px 20px 0px",
-  },
-  title: {
-    fontSize: "2rem",
-    marginBottom: "10px",
-    color: "#333",
-    textShadow: "0px 0px 2px #333",
-  },
-  board: {
-    display: "grid",
-    gridTemplateRows: `repeat(${BOARD_ROWS}, 20px)`,
-    gap: "1px",
-    justifyContent: "center",
-    margin: "auto",
-    backgroundColor: "#555",
-    padding: "5px",
-    borderRadius: "10px",
-    boxShadow: "0px 0px 3px #555",
-  },
-  row: {
-    display: "grid",
-    gridTemplateColumns: `repeat(${BOARD_COLS}, 20px)`,
-  },
-  cell: {
-    width: "20px",
-    height: "20px",
-    borderRadius: "4px",
-  },
-  gameOver: {
-    fontSize: "1.5rem",
-    color: "red",
-    margin: "5px 0px 0px",
-  },
-  resetButton: {
-    marginTop: "10px",
-    padding: "10px 20px",
-    fontSize: "1rem",
-    backgroundColor: "#007bff",
-    color: "white",
-    border: "none",
-    borderRadius: "5px",
-    cursor: "pointer",
-    boxShadow: "2px 2px 3px #333",
-  },
 };
 
 export default SnakeGame;

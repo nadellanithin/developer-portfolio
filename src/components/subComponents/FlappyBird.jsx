@@ -1,16 +1,24 @@
 import React, { useState, useEffect, useCallback } from "react";
 
-const GAME_WIDTH = 600;
-const GAME_HEIGHT = 400;
-const BIRD_WIDTH = 30;
-const BIRD_HEIGHT = 30;
-const PIPE_WIDTH = 60;
-const GAP_HEIGHT = 150;
-const GRAVITY = 2;
-const JUMP_HEIGHT = -10;
-const PIPE_SPEED = 4;
-
 const FlappyBird = () => {
+  const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 600);
+
+  useEffect(() => {
+    const handleResize = () => setIsSmallScreen(window.innerWidth < 600);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const GAME_WIDTH = isSmallScreen ? 300 : 600;
+  const GAME_HEIGHT = isSmallScreen ? 200 : 400;
+  const BIRD_WIDTH = isSmallScreen ? 15 : 30;
+  const BIRD_HEIGHT = isSmallScreen ? 15 : 30;
+  const PIPE_WIDTH = isSmallScreen ? 30 : 60;
+  const GAP_HEIGHT = isSmallScreen ? 100 : 150;
+  const GRAVITY = 2;
+  const JUMP_HEIGHT = -10;
+  const PIPE_SPEED = isSmallScreen ? 2 : 4;
+
   const [birdY, setBirdY] = useState(GAME_HEIGHT / 2);
   const [birdVelocity, setBirdVelocity] = useState(0);
   const [pipes, setPipes] = useState([]);
@@ -26,13 +34,13 @@ const FlappyBird = () => {
   };
 
   const generatePipe = useCallback(() => {
-    const topHeight = Math.random() * (GAME_HEIGHT - GAP_HEIGHT - 100);
+    const topHeight = Math.random() * (GAME_HEIGHT - GAP_HEIGHT - 50);
     return {
       top: topHeight,
       bottom: GAME_HEIGHT - topHeight - GAP_HEIGHT,
       x: GAME_WIDTH,
     };
-  }, []);
+  }, [GAME_HEIGHT, GAP_HEIGHT, GAME_WIDTH]);
 
   const movePipes = useCallback(() => {
     setPipes((prevPipes) => {
@@ -52,7 +60,7 @@ const FlappyBird = () => {
 
       return updatedPipes;
     });
-  }, [generatePipe]);
+  }, [PIPE_SPEED, PIPE_WIDTH, GAME_WIDTH, generatePipe]);
 
   const checkCollision = useCallback(() => {
     const birdTop = birdY;
@@ -79,7 +87,7 @@ const FlappyBird = () => {
       }
     }
     return false;
-  }, [birdY, pipes]);
+  }, [birdY, pipes, BIRD_HEIGHT, BIRD_WIDTH, GAME_HEIGHT, PIPE_WIDTH]);
 
   const restartGame = () => {
     setBirdY(GAME_HEIGHT / 2);
@@ -104,7 +112,7 @@ const FlappyBird = () => {
     }, 30);
 
     return () => clearInterval(gameLoop);
-  }, [birdVelocity, movePipes, checkCollision, gameOver]);
+  }, [birdVelocity, movePipes, checkCollision, gameOver, GRAVITY]);
 
   useEffect(() => {
     const handleSpacePress = (e) => {
@@ -123,10 +131,18 @@ const FlappyBird = () => {
   return (
     <div style={styles.container}>
       <h1 style={styles.title}>Flappy Bird</h1>
-      <div style={styles.gameBox}>
+      <div
+        style={{
+          ...styles.gameBox,
+          width: `${GAME_WIDTH}px`,
+          height: `${GAME_HEIGHT}px`,
+        }}
+      >
         <div
           style={{
             ...styles.bird,
+            width: `${BIRD_WIDTH}px`,
+            height: `${BIRD_HEIGHT}px`,
             top: `${birdY}px`,
           }}
         />
@@ -136,6 +152,7 @@ const FlappyBird = () => {
             <div
               style={{
                 ...styles.pipe,
+                width: `${PIPE_WIDTH}px`,
                 height: `${pipe.top}px`,
                 left: `${pipe.x}px`,
                 top: "0",
@@ -144,6 +161,7 @@ const FlappyBird = () => {
             <div
               style={{
                 ...styles.pipe,
+                width: `${PIPE_WIDTH}px`,
                 height: `${pipe.bottom}px`,
                 left: `${pipe.x}px`,
                 bottom: "0",
@@ -172,8 +190,6 @@ const styles = {
   },
   gameBox: {
     position: "relative",
-    width: `${GAME_WIDTH}px`,
-    height: `${GAME_HEIGHT}px`,
     margin: "10px auto",
     border: "5px solid #555",
     overflow: "hidden",
@@ -182,14 +198,11 @@ const styles = {
   },
   bird: {
     position: "absolute",
-    width: `${BIRD_WIDTH}px`,
-    height: `${BIRD_HEIGHT}px`,
     backgroundColor: "#ffea00",
     borderRadius: "50%",
   },
   pipe: {
     position: "absolute",
-    width: `${PIPE_WIDTH}px`,
     backgroundColor: "#008000",
   },
   gameOver: {

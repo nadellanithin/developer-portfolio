@@ -82,8 +82,10 @@ const MovieList = () => {
 
 const styles = {
   container: {
+    width: "65vw",
+    minWidth: "350px",
     maxWidth: "1200px",
-    margin: "30px",
+    margin: "30px auto",
     padding: "20px",
     textAlign: "center",
     backgroundColor: "#f5f5f5",
@@ -136,9 +138,9 @@ const styles = {
   },
   moviesGrid: {
     display: "grid",
-    gridTemplateColumns: "repeat(6, minmax(150px, 1fr))",
     gap: "20px",
     marginTop: "20px",
+    gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
   },
   movieCard: {
     backgroundColor: "#fff",
@@ -146,6 +148,10 @@ const styles = {
     overflow: "hidden",
     boxShadow: "0px 2px 5px rgba(0, 0, 0, 0.8)",
     textAlign: "center",
+    transition: "transform 0.2s",
+  },
+  movieCardHover: {
+    transform: "scale(1.05)",
   },
   moviePoster: {
     width: "100%",

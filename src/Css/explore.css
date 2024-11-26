@@ -118,7 +118,9 @@
   background: white;
   padding: 20px;
   border-radius: 10px;
-  width: clamp(80%, max-content, 1200px);
+  width: min-content;
+  min-width: 300px;
+  max-width: 1200px;
   position: relative;
   margin-top: 40px;
   max-height: 600px;
@@ -135,4 +137,12 @@
   color: #000000;
   text-shadow: 0px 0px 2px #000;
   cursor: pointer;
+}
+
+@media screen and (max-width: 499px) {
+  .modal-close {
+    top: 10px;
+    right: -5px;
+    font-size: 1.2rem;
+  }
 }
