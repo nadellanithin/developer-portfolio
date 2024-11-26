@@ -9,7 +9,7 @@ function Experience() {
           <div className="ExpInfo">
             <div className="ExpInfoHeader">
               <span>Virtusa</span>
-              <span className="SubText">Aug 2019 - Aug 2021 [2 years]</span>
+              <span className="SubText">Aug 2019 - Aug 2021</span>
             </div>
             <div className="ExpInfoContent">
               <p>Software Engineer [Fullstack]</p>
@@ -29,10 +29,10 @@ function Experience() {
               </span>
             </div>
           </div>
-          <div className="ExpInfo" style={{ marginRight: "80px" }}>
+          <div className="ExpInfo" style={{ alignSelf: "flex-start" }}>
             <div className="ExpInfoHeader">
               <span>Oklahoma State University</span>
-              <span className="SubText">Feb 2022 - May 2022 [3 months]</span>
+              <span className="SubText">Feb 2022 - May 2022</span>
             </div>
             <div className="ExpInfoContent">
               <p>Software Engineer [Front-end]</p>
@@ -50,7 +50,7 @@ function Experience() {
           <div className="ExpInfo">
             <div className="ExpInfoHeader">
               <span>Empyra</span>
-              <span className="SubText">May 2022 - Present [2 years*]</span>
+              <span className="SubText">May 2022 - Present</span>
             </div>
             <div className="ExpInfoContent">
               <p>Software Engineer [Fullstack]</p>
@@ -74,7 +74,7 @@ function Experience() {
             </div>
           </div>
         </div>
-        <img src="assets/Experience.png" height={450} width={500} />
+        <img src="assets/Experience.png" className="exp-img" />
       </div>
     </div>
   );

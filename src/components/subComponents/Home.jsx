@@ -16,7 +16,7 @@ function Home() {
         <span className="Greetings">
           Greetings fellow <em>{isDarkMode ? "Sith Lord" : "Jedi"}</em>,
         </span>
-        <p className="Msg text-blur">
+        <p className="Msg">
           I am <em>Nithin Subhash Nadella</em>, a{" "}
           {isDarkMode ? "master" : "guardian"} of the{" "}
           <em>{isDarkMode ? "Dark Side" : "Light Side"}</em> of development. As
@@ -38,7 +38,7 @@ function Home() {
             : "brings light to the projects I create"}
           .
         </p>
-        <pre className="Msg text-blur">
+        <pre className="Msg">
           <em>
             {" "}
             - Join me, and together we can code the galaxy{" "}

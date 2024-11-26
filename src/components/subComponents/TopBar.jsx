@@ -1,9 +1,11 @@
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../../Css/subComponents.css";
 import Toggle from "./Toggle";
 
 function TopBar() {
   const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleNavigateToSection = (sectionId) => {
     navigate("/");
@@ -13,22 +15,24 @@ function TopBar() {
         section.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     }, 100);
+    setMenuOpen(false);
   };
 
   return (
     <div className="TopBar">
-      <div style={{ display: "flex", gap: "10px" }}>
+      <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
         <a className="Title" onClick={() => handleNavigateToSection("Home")}>
-          <img
-            src="favicon.ico"
-            alt="Website logo"
-            className="Logo"
-          />
+          <img src="favicon.ico" alt="Website logo" className="Logo" />
           <strong>Nithin Subhash Nadella</strong>
         </a>
         <Toggle />
       </div>
-      <div className="NavLinkBlock">
+
+      <div className="HamburgerIcon" onClick={() => setMenuOpen(!menuOpen)}>
+        ☰
+      </div>
+
+      <div className={`NavLinkBlock ${menuOpen ? "Open" : "Closed"}`}>
         <a className="NavLink" onClick={() => handleNavigateToSection("About")}>
           About
         </a>
@@ -44,7 +48,11 @@ function TopBar() {
         >
           Experience
         </a>
-        <Link to="/explore" className="NavLink">
+        <Link
+          to="/explore"
+          className="NavLink"
+          onClick={() => setMenuOpen(false)}
+        >
           Explore
         </Link>
         <a

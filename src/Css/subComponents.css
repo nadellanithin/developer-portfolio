@@ -5,7 +5,6 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  min-width: 700px;
   background-color: var(--top-bar-bg);
   color: #fff;
   position: fixed;
@@ -48,6 +47,14 @@
   font-weight: bold;
 }
 
+.HamburgerIcon {
+  display: none;
+  padding: 10px;
+  font-size: 25px;
+  cursor: pointer;
+  color: #fff;
+}
+
 .Home {
   display: flex;
   flex-wrap: wrap-reverse;
@@ -56,6 +63,7 @@
   width: 100%;
   height: 100vh;
   color: #fff;
+  min-height: 600px;
 }
 
 .Home .Intro {
@@ -66,7 +74,7 @@
   margin: 30px;
   backdrop-filter: blur(5px);
   box-shadow: 8px 8px 20px var(--intro-bxs);
-  min-width: 100ch;
+  min-width: 550px;
 }
 
 .Home .Intro:hover {
@@ -81,6 +89,7 @@
 .Home .Intro .Msg {
   font-size: clamp(1rem, 1.1vw, 2rem);
   line-height: 2;
+  white-space: pre-wrap;
 }
 
 .Home .IconContainer {
@@ -207,7 +216,6 @@
   color: #fff;
   text-align: justify;
   box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
   z-index: 1;
   min-width: 500px;
   min-height: 300px;
@@ -375,9 +383,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #fff;
+  text-align: center;
   width: 20vw;
-  height: 40vh;
+  height: 20vh;
   background: var(--sC-bg);
   border: 3px solid var(--sContainer-border);
   border-radius: 15px;
@@ -388,7 +396,7 @@
   font-weight: 600;
   backdrop-filter: blur(5px);
   min-width: 300px;
-  min-height: 250px;
+  min-height: 300px;
 }
 
 .Experience {
@@ -411,19 +419,25 @@
   height: auto;
 }
 
+.exp-img {
+  height: 450px;
+  width: 500px;
+}
+
 .SubSection {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  margin: 0px 30px;
 }
 
 .ExpInfo {
   background: var(--exp-info-bg);
   border-radius: 2px;
   margin: 5px 0;
-  padding: 1vh 1vw;
+  padding: 8px;
   width: 52vw;
   border: 3px solid #fff;
   color: #fff;
@@ -437,16 +451,17 @@
   overflow: hidden;
   transition: max-height 1s ease, font-size 0.5s ease;
   min-height: 40px;
+  min-width: 450px;
 }
 
 .ExpInfo:hover {
   max-height: 500px;
-  font-size: xx-large;
+  font-size: 2rem;
 }
 
 .elevated-image {
   width: 15vw;
-  height: 30vh;
+  height: 8vh;
   margin-bottom: 10px;
   filter: drop-shadow(0px 0px 5px #cf7cd680);
   transition: transform 0.3s ease;
@@ -494,9 +509,11 @@
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
+  flex-wrap: wrap;
   width: 100%;
   height: auto;
   margin-bottom: 50px;
+  gap: 20px;
 }
 
 .SectionContext {
@@ -504,13 +521,14 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  width: 50%;
+  flex: 1;
   color: #fff;
   margin: 0px 10px;
   background: #00000050;
   padding: 0px 20px 20px;
   backdrop-filter: blur(5px);
   border-radius: 10px;
+  max-width: 90vw;
 }
 
 .ContactCard {
@@ -518,14 +536,15 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  width: 50%;
+  flex: 1;
   height: auto;
   background: var(--sC-bg);
   border-radius: 10px;
   box-shadow: -10px -10px 10px 0px #00000050;
   margin: 0px 15px;
   color: #fff;
-  padding: 0px 20px;
+  padding: 0px 15px;
+  max-width: 90vw;
 }
 
 .ContactInfoContainer {
@@ -538,8 +557,7 @@
 .align-cloumn {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  margin: 0px 8px;
+  width: 48%;
   position: relative;
 }
 
@@ -572,4 +590,175 @@
   box-shadow: 0px 0px 10px gold;
   transform: scale(1.1);
   transition: transform 0.3s ease-in-out;
+}
+
+@media only screen and (max-width: 600px) {
+  /* Mobile */
+  .NavLinkBlock {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: var(--top-bar-bg);
+    width: 100%;
+    z-index: 9999;
+  }
+
+  .NavLinkBlock.Open {
+    display: flex;
+  }
+
+  .HamburgerIcon {
+    display: block;
+  }
+
+  .Home {
+    margin-top: 60px;
+    min-height: unset;
+  }
+
+  .Home .Intro {
+    margin: 20px;
+    padding: 4%;
+    min-width: 300px;
+  }
+
+  .Carousel {
+    height: 65vh;
+  }
+
+  .Carousel-item {
+    overflow: unset;
+  }
+
+  .CarouselContent {
+    padding-left: unset;
+  }
+
+  .CarouselInfo {
+    min-width: 300px;
+    height: 40vh;
+    min-height: 290px;
+    align-items: flex-start;
+  }
+
+  .Badge {
+    left: unset;
+    width: 80px;
+    height: 80px;
+    min-width: 90px;
+    min-height: 80px;
+    top: -5vh;
+  }
+
+  .Info {
+    margin-left: unset;
+  }
+
+  .badge {
+    margin: 5px;
+    padding: 8px 10px;
+    border-radius: 5px;
+  }
+
+  .badge-logo {
+    width: 22px;
+    height: 22px;
+  }
+
+  .badge-name {
+    font-size: 12px;
+  }
+
+  .S-container {
+    min-width: 120px;
+    min-height: 120px;
+    margin: 0px 5px 20px;
+  }
+
+  .elevated-image {
+    min-width: 50px;
+    min-height: 50px;
+  }
+
+  .SectionContent {
+    flex-direction: column-reverse;
+  }
+
+  .exp-img {
+    height: 350px;
+    width: 400px;
+  }
+
+  .SubSection {
+    padding-left: 15px;
+  }
+
+  .ExpInfo {
+    min-width: 350px;
+    padding: 10px;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  /* Tablets */
+  .Home {
+    margin-top: clamp(30px, 60px, 240px);
+    min-height: 800px;
+  }
+
+  .Home .Intro {
+    min-width: 580px;
+    margin: 20px 40px;
+  }
+
+  .CarouselInfo {
+    min-width: 400px;
+  }
+
+  .Badge {
+    min-width: 95px;
+    min-height: 85px;
+  }
+
+  .Info {
+    margin-left: 18%;
+  }
+
+  .badge {
+    margin: 8px;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+
+  .badge-logo {
+    width: 26px;
+    height: 26px;
+  }
+
+  .badge-name {
+    font-size: 14px;
+  }
+
+  .S-container {
+    min-width: 180px;
+    min-height: 180px;
+    margin: 0px 5px 20px;
+    padding: 10px;
+  }
+
+  .elevated-image {
+    height: 15vw;
+    min-width: 100px;
+    min-height: 100px;
+  }
+
+  .SectionContent {
+    flex-direction: column-reverse;
+  }
+
+  .SubSection {
+    padding: 0px 15vw 0px 8vw;
+  }
 }

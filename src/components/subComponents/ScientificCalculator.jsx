@@ -197,8 +197,12 @@ const ScientificCalculator = () => {
 
 const styles = {
   container: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
     maxWidth: "400px",
-    margin: "20px 60px",
+    margin: "20px",
     padding: "20px",
     backgroundColor: "#000000",
     boxShadow: "0px 0px 5px #000",
