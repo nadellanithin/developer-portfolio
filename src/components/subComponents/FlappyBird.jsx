@@ -2,11 +2,21 @@ import React, { useState, useEffect, useCallback } from "react";
 
 const FlappyBird = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 600);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
     const handleResize = () => setIsSmallScreen(window.innerWidth < 600);
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+
+    const touchMediaQuery = window.matchMedia("(pointer: coarse)");
+    const updateTouchDevice = (e) => setIsTouchDevice(e.matches);
+    updateTouchDevice(touchMediaQuery);
+    touchMediaQuery.addEventListener("change", updateTouchDevice);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      touchMediaQuery.removeEventListener("change", updateTouchDevice);
+    };
   }, []);
 
   const GAME_WIDTH = isSmallScreen ? 300 : 600;
@@ -121,12 +131,25 @@ const FlappyBird = () => {
         jump();
       }
     };
+
+    const handleTouchStart = (e) => {
+      e.preventDefault();
+      jump();
+    };
+
     window.addEventListener("keydown", handleSpacePress);
+
+    if (isTouchDevice) {
+      window.addEventListener("touchstart", handleTouchStart);
+    }
 
     return () => {
       window.removeEventListener("keydown", handleSpacePress);
+      if (isTouchDevice) {
+        window.removeEventListener("touchstart", handleTouchStart);
+      }
     };
-  }, [jump]);
+  }, [jump, isTouchDevice]);
 
   return (
     <div style={styles.container}>
@@ -146,7 +169,6 @@ const FlappyBird = () => {
             top: `${birdY}px`,
           }}
         />
-
         {pipes.map((pipe, index) => (
           <React.Fragment key={index}>
             <div

@@ -19,6 +19,9 @@ const SnakeGame = () => {
   const [score, setScore] = useState(0);
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 600);
 
+  let touchStartX = null;
+  let touchStartY = null;
+
   useEffect(() => {
     const handleResize = () => setIsSmallScreen(window.innerWidth < 600);
     window.addEventListener("resize", handleResize);
@@ -75,6 +78,37 @@ const SnakeGame = () => {
         setDirection(DIRECTIONS[e.key]);
       }
     }
+  };
+
+  const handleTouchStart = (e) => {
+    const touch = e.touches[0];
+    touchStartX = touch.clientX;
+    touchStartY = touch.clientY;
+  };
+
+  const handleTouchMove = (e) => {
+    if (!touchStartX || !touchStartY) return;
+
+    const touch = e.touches[0];
+    const deltaX = touch.clientX - touchStartX;
+    const deltaY = touch.clientY - touchStartY;
+
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+      if (deltaX > 0 && direction !== DIRECTIONS.ArrowLeft) {
+        setDirection(DIRECTIONS.ArrowRight);
+      } else if (deltaX < 0 && direction !== DIRECTIONS.ArrowRight) {
+        setDirection(DIRECTIONS.ArrowLeft);
+      }
+    } else {
+      if (deltaY > 0 && direction !== DIRECTIONS.ArrowUp) {
+        setDirection(DIRECTIONS.ArrowDown);
+      } else if (deltaY < 0 && direction !== DIRECTIONS.ArrowDown) {
+        setDirection(DIRECTIONS.ArrowUp);
+      }
+    }
+
+    touchStartX = null;
+    touchStartY = null;
   };
 
   useEffect(() => {
@@ -154,7 +188,11 @@ const SnakeGame = () => {
   };
 
   return (
-    <div style={styles.container}>
+    <div
+      style={styles.container}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+    >
       <h1 style={styles.title}>Snake Game</h1>
       <div style={styles.board}>
         {Array.from({ length: BOARD_ROWS }, (_, row) => (

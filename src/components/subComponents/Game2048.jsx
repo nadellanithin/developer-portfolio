@@ -116,6 +116,9 @@ const Game2048 = () => {
   const [score, setScore] = useState(0);
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth < 600);
 
+  let startX = 0;
+  let startY = 0;
+
   useEffect(() => {
     const handleResize = () => setIsSmallScreen(window.innerWidth < 600);
     window.addEventListener("resize", handleResize);
@@ -134,6 +137,36 @@ const Game2048 = () => {
       else if (e.key === "ArrowDown") direction = "down";
       else return;
 
+      handleMove(direction);
+    };
+
+    const handleTouchStart = (e) => {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+    };
+
+    const handleTouchEnd = (e) => {
+      const endX = e.changedTouches[0].clientX;
+      const endY = e.changedTouches[0].clientY;
+
+      const deltaX = endX - startX;
+      const deltaY = endY - startY;
+
+      const absDeltaX = Math.abs(deltaX);
+      const absDeltaY = Math.abs(deltaY);
+
+      if (gameOver) return;
+
+      if (absDeltaX > absDeltaY) {
+        if (deltaX > 30) handleMove("right");
+        else if (deltaX < -30) handleMove("left");
+      } else {
+        if (deltaY > 30) handleMove("down");
+        else if (deltaY < -30) handleMove("up");
+      }
+    };
+
+    const handleMove = (direction) => {
       const { newBoard, score: gainedScore } = moveBoard(board, direction);
       if (!areBoardsEqual(board, newBoard)) {
         addRandomTile(newBoard);
@@ -146,8 +179,13 @@ const Game2048 = () => {
     };
 
     window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("touchstart", handleTouchStart);
+    window.addEventListener("touchend", handleTouchEnd);
+
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchend", handleTouchEnd);
     };
   }, [board, gameOver, score]);
 
